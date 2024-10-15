@@ -35,7 +35,10 @@ public class HangmanGameService {
             }
 
             if(isGuessingCorrect) {
-
+                System.out.println("You guessed correctly!");
+                if (isGameFinished(guessingArray)) {
+                    break;
+                }
             } else {
                 numberOfChances--;
                 if (numberOfChances == 0) {
@@ -49,6 +52,17 @@ public class HangmanGameService {
 
             System.out.println("The word: " + new String(guessingArray));
         }
+    }
+
+    private boolean isGameFinished(char[] guessingArray) {
+        for (int i = 0; i < guessingArray.length; i++) {
+            if (guessingArray[i] == '_') {
+                return false;
+            }
+        }
+        System.out.println("You won");
+        System.out.println("The word: " + new String(guessingArray));
+        return true;
     }
 
     @SneakyThrows
