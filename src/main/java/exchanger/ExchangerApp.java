@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ExchangerService {
+public class ExchangerApp {
     private static Map<String, Double> exchangeRates = new HashMap<String, Double>();
 
     static {
